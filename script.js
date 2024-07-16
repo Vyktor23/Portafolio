@@ -31,11 +31,12 @@ window.onscroll = function() { efectoHabilidades() };
 function efectoHabilidades() {
     var skills = document.getElementById("skills");
     var distancia_skills = window.innerHeight - skills.getBoundingClientRect().top;
-    if (distancia_skills >= 300) {
+    if (distancia_skills >= 100) {
         document.getElementById("html").classList.add("barra-progreso1");
         document.getElementById("js").classList.add("barra-progreso2");
         document.getElementById("bd").classList.add("barra-progreso3");
         document.getElementById("ps").classList.add("barra-progreso4");
+        document.getElementById("te").classList.add("barra-progreso5");
     }
 
 }
