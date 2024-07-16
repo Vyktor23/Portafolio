@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="estilo.css">
+    <title>Website Victor Ramirez</title>
+</head>
+
+<body>
+    <!-- SECCION INICIO -->
+    <section id="inicio">
+        <div class="contenido">
+            <header>
+                <div class="contenido-header">
+                    <h1>VR</h1>
+                    <nav id="nav" class="">
+                        <ul id="links">
+                            <li><a href="#inicio" class="seleccionado" onclick="seleccionar(this)">INICIO</a></li>
+                            <li><a href="#sobremi" onclick="seleccionar(this)">SOBRE MI</a></li>
+                            <li><a href="#servicios" onclick="seleccionar(this)">ESTUDIOS</a></li>
+                            <li><a href="#portfolio" onclick="seleccionar(this)">PROYECTOS</a></li>
+                            <li><a href="#contacto" onclick="seleccionar(this)">CONTACTO</a></li>
+                        </ul>
+                    </nav>
+
+                    <!-- Icono del menu responsive -->
+                    <div id="icono-nav" onclick="responsiveMenu()">
+                        <i class="fas fa-bars"></i>
+                    </div>
+
+                    <div class="redes">
+                        <a href="https://www.youtube.com/user/tucanal" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://github.com/Vyktor23" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/victor_ram04?igsh=NXFzaGVicG5hcGlt" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/v%C3%ADctor-ram%C3%ADrez-rangel-5279251b4/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </header>
+            <div class="presentacion">
+                <p class="bienvenida">Bienvenidos</p>
+                <h2>Soy <span>Víctor Ramírez</span>, desarrollador web</h2>
+                <p class="descripcion">Apasionado desarrollador web con experiencia en diseño y SEO.</p>
+                <a href="#portfolio">Ir a Proyectos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION SOBRE MI -->
+    <section id="sobremi">
+        <div class="contenedor-foto">
+            <img src="./img/fotop.jpeg" alt="">
+        </div>
+        <div class="sobremi">
+            <p class="titulo-seccion">Sobre Mi</p>
+            <h2>Hola, Soy <span>Víctor Ramírez</span></h2>
+            <h3>Desarrollador Web</h3>
+            <p>Soy un desarrollador web con experiencia en la creación de sitios modernos y funcionales.</p>
+            <p>Me especializo en PHP, JavaScript y diseño gráfico.</p>
+            <!-- Redes sociales -->
+            <div class="redes">
+                <a href="https://www.youtube.com/user/tucanal" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://github.com/Vyktor23" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/victor_ram04?igsh=NXFzaGVicG5hcGlt" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/v%C3%ADctor-ram%C3%ADrez-rangel-5279251b4/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <a href="#">Descargar CV</a>
+        </div>
+    </section>
+
+<!-- SECCION ESTUDIOS -->
+<section id="servicios">
+    <h3 class="titulo-seccion">Mis Estudios</h3>
+    <div class="fila">
+        <div class="servicio">
+            <span class="icono"><i class="fas fa-code"></i></span>
+            <h4>Bachiller Técnico en Sistemas</h4>
+            <hr>
+            <p>Colegio Técnico Nuestra Señora de la Presentación.</p>
+            <p>Santander - Colombia.</p>
+            <p>2022</p>
+        </div>
+        <div class="servicio">
+            <span class="icono"><i class="fas fa-file-code"></i></span>
+            <h4>Curso Procesos de Soporte Técnico y Mantenimiento de Equipos de Cómputo. </h4>
+            <hr>
+            <p>Servicio Nacional de Aprendizaje (SENA).</p>
+            <p>Santander - Colombia.</p>
+            <p>2023</p>
+        </div>
+        <div class="servicio">
+            <span class="icono"><i class="fas fa-arrow-trend-up"></i></span>
+            <h4>Tecnólogo en Análisis y Desarrollo de Software (ADSO)</h4>
+            <hr>
+            <p>Servicio Nacional de Aprendizaje (SENA).</p>
+            <p>Santander - Colombia.</p>
+            <p>2023 - (Actualidad Cursando)</p>
+        </div>
+    </div>
+</section>
+
+    <!-- SECCION LENGUAJES -->
+<section id="lenguajes">
+    <h3 class="titulo-seccion">Lenguajes y Tecnologías</h3>
+    <div class="fila">
+        <!-- Frontend -->
+        <div class="categoria">
+            <h4>Frontend</h4>
+            <div class="lenguaje">
+                <img src="./img/html.png" alt="HTML">
+                <div class="contenido">
+                    <h5>HTML</h5>
+                    <p>Lenguaje base para crear páginas web. Define la estructura y el contenido.</p>
+                </div>
+            </div>
+            <div class="lenguaje">
+                <img src="./img/css.png" alt="CSS">
+                <div class="contenido">
+                    <h5>CSS</h5>
+                    <p>Se utiliza para diseñar y dar estilo a las páginas web.</p>
+                </div>
+            </div>
+            <div class="lenguaje">
+                <img src="./img/javascript.png" alt="JavaScript">
+                <div class="contenido">
+                    <h5>JavaScript</h5>
+                    <p>Lenguaje de programación que se ejecuta en el navegador del usuario y permite crear páginas web interactivas y dinámicas.</p>
+                </div>
+            </div>
+            <div class="lenguaje">
+                <img src="./img/vue.png" alt="Vue">
+                <div class="contenido">
+                    <h5>Vue</h5>
+                    <p>Es un framework progresivo de JavaScript utilizado para construir interfaces de usuario dinámicas y reactivas.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Backend -->
+        <div class="categoria">
+            <h4>Backend</h4>
+            <div class="lenguaje">
+                <img src="./img/nodejs.png" alt="Node.js">
+                <div class="contenido">
+                    <h5>Node.js</h5>
+                    <p>Es un entorno de ejecución que permite usar JavaScript en el servidor, se maneja solicitudes de usuarios, interacción con bases de datos y realizar operaciones en el servidor.</p>
+                </div>
+            </div>
+            <div class="lenguaje">
+                <img src="./img/mongodb.png" alt="MongoDB">
+                <div class="contenido">
+                    <h5>MongoDB</h5>
+                    <p>Base de datos NoSQL que almacena datos en formato de documentos JSON. Es ideal para aplicaciones que requieren manejar grandes volúmenes de datos no estructurados y cambiar rápidamente.</p>
+                </div>
+            </div>
+            <div class="lenguaje">
+                <img src="./img/mysql.jpg" alt="MySQL">
+                <div class="contenido">
+                    <h5>MySQL</h5>
+                    <p>Es un sistema de gestión de bases de datos relacional que organiza los datos en tablas. Es muy utilizado en aplicaciones web para almacenar y gestionar información estructurada.</p>
+                </div>
+            </div>
+            <div class="lenguaje">
+                <img src="./img/python.jpg" alt="Python">
+                <div class="contenido">
+                    <h5>Python</h5>
+                    <p>Lenguaje de programación muy versátil y fácil de aprender. Se utiliza en una amplia variedad de aplicaciones, desde desarrollo web hasta análisis de datos y aprendizaje automático.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- SECCION HABILIDADES -->
+    <div class="contenedor-skills" id="skills">
+        <h3>HABILIDADES</h3>
+        <div class="skill">
+            <div class="info">
+                <p>HTML & CSS</p>
+                <span class="porcentaje">95%</span>
+            </div>
+            <div class="barra">
+                <div class="" id="html"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="info">
+                <p>JavaScript</p>
+                <span class="porcentaje">90%</span>
+            </div>
+            <div class="barra">
+                <div class="" id="js"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="info">
+                <p>Bases de Datos</p>
+                <span class="porcentaje">90%</span>
+            </div>
+            <div class="barra">
+                <div class="" id="bd"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="info">
+                <p>Photoshop</p>
+                <span class="porcentaje">85%</span>
+            </div>
+            <div class="barra">
+                <div class="" id="ps"></div>
+            </div>
+        </div>
+    </div>
+
+<!-- SECCION PORTAFOLIO -->
+<section id="portfolio">
+    <h3 class="titulo-seccion">Mis Proyectos</h3>
+    <div class="fila">
+        <div class="proyecto">
+            <a href="https://pokedex-chi-six.vercel.app/#/" target="_blank">
+                <img src="./img/pokedex.png" alt="">
+                <div class="overlay">
+                    <p>Ver proyecto</p>
+                </div>
+            </a>
+            <div class="detalles">
+                <h4>Pokedex</h4>
+                <p>Un proyecto web para buscar y visualizar información sobre Pokémon.</p>
+            </div>
+        </div>
+        <div class="proyecto">
+            <a href="#">
+                <img src="./img/proyecto2.jpg" alt="">
+                <div class="overlay">
+                    <p>Ver proyecto</p>
+                </div>
+            </a>
+            <div class="detalles">
+                <h4>Proyecto 2</h4>
+                <p>Breve descripción del proyecto 2.</p>
+            </div>
+        </div>
+        <div class="proyecto">
+            <a href="#">
+                <img src="./img/proyecto3.jpg" alt="">
+                <div class="overlay">
+                    <p>Ver proyecto</p>
+                </div>
+            </a>
+            <div class="detalles">
+                <h4>Proyecto 3</h4>
+                <p>Breve descripción del proyecto 3.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- SECCION CONTACTO -->
+    <section id="contacto">
+        <h3 class="titulo-seccion">Contacto</h3>
+        <form class="formulario">
+            <input type="text" placeholder="Nombre" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Mensaje" required></textarea>
+            <input type="submit" value="Enviar Mensaje">
+        </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="redes">
+            <a href="https://www.youtube.com/user/tucanal" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://github.com/Vyktor23" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/victor_ram04?igsh=NXFzaGVicG5hcGlt" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/v%C3%ADctor-ram%C3%ADrez-rangel-5279251b4/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <br>
+        <p>Víctor Ramírez &copy; 2024</p>
+        <br>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
