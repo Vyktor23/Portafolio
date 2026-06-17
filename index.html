@@ -9,50 +9,94 @@
     <link rel="stylesheet" href="estilo.css">
     <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
     <title>Website Victor Ramirez</title>
+    <script>
+        (function () {
+            var saved = localStorage.getItem('theme');
+            var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (saved === 'dark' || (!saved && prefersDark)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
 </head>
 
 <body>
+    <!-- Barra de progreso al hacer scroll -->
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+    <!-- Navegación global fija -->
+    <header class="site-header" id="site-header">
+        <div class="contenido-header">
+            <a href="#inicio" class="logo">VR</a>
+            <nav id="nav">
+                <ul id="links">
+                    <li><a href="#inicio" class="seleccionado" data-section="inicio">Inicio</a></li>
+                    <li><a href="#sobremi" data-section="sobremi">Sobre mí</a></li>
+                    <li><a href="#estudios" data-section="estudios">Estudios</a></li>
+                    <li><a href="#servicios" data-section="servicios">Servicios</a></li>
+                    <li><a href="#portfolio" data-section="portfolio">Proyectos</a></li>
+                    <li><a href="#contacto" data-section="contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <button id="icono-nav" type="button" aria-label="Abrir menú" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Cambiar a modo oscuro" title="Cambiar tema">
+                <i class="fas fa-moon icon-moon"></i>
+                <i class="fas fa-sun icon-sun"></i>
+            </button>
+            <div class="redes">
+                <a href="https://www.youtube.com/@VictorRamirez0423" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://github.com/Vyktor23" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/04victorius?igsh=NXFzaGVicG5hcGlt" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/v%C3%ADctor-ram%C3%ADrez-rangel-5279251b4/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="nav-backdrop" id="nav-backdrop"></div>
+    </header>
+
     <!-- SECCION INICIO -->
 <section id="inicio">
     <div class="contenido">
-        <header>
-            <div class="contenido-header">
-                <h1>VR</h1>
-                <nav id="nav">
-                    <ul id="links">
-                        <li><a href="#inicio" class="seleccionado" onclick="seleccionar(this)">INICIO</a></li>
-                        <li><a href="#sobremi" onclick="seleccionar(this)">SOBRE MI</a></li>
-                        <li><a href="#estudios" onclick="seleccionar(this)">ESTUDIOS</a></li>
-                        <li><a href="#portfolio" onclick="seleccionar(this)">PROYECTOS</a></li>
-                        <li><a href="#contacto" onclick="seleccionar(this)">CONTACTO</a></li>
-                    </ul>
-                </nav>
-
-                <!-- Icono del menu responsive -->
-                <div id="icono-nav" onclick="responsiveMenu()" style="cursor: pointer;">
-                    <i class="fas fa-bars"></i>
-                </div>
-
-                <div class="redes" >
-                    <a href="https://www.youtube.com/@VictorRamirez0423" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
-                    <a href="https://github.com/Vyktor23" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
-                    <a href="https://www.instagram.com/victor_ram04?igsh=NXFzaGVicG5hcGlt" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/v%C3%ADctor-ram%C3%ADrez-rangel-5279251b4/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-        </header>
-        <div class="presentacion">
+        <div class="presentacion hero-animate">
             <p class="bienvenida">Bienvenidos</p>
             <h2>Soy <span>Víctor Ramírez</span>, desarrollador web</h2>
             <p class="descripcion">comprometido con la innovación y el crecimiento constante</p>
             <a href="#portfolio" class="btn-proyectos">Ir a Proyectos</a>
+        </div>
+        <a href="#sobremi" class="scroll-hint" aria-label="Desplazarse hacia abajo">
+            <span class="scroll-hint-wheel"></span>
+        </a>
+    </div>
+</section>
+
+<!-- BARRA DE ESTADÍSTICAS -->
+<section id="stats" class="stats-bar reveal">
+    <div class="stats-grid">
+        <div class="stat-item">
+            <span class="stat-num">3+</span>
+            <span class="stat-label">Proyectos publicados</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-num">8+</span>
+            <span class="stat-label">Tecnologías dominadas</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-num">2+</span>
+            <span class="stat-label">Años de experiencia</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Compromiso con cada proyecto</span>
         </div>
     </div>
 </section>
 
 
     <!-- SECCION SOBRE MI -->
-    <section id="sobremi">
+    <section id="sobremi" class="reveal">
         <div class="contenedor-foto">
             <img src="./img/fotop.jpeg" alt="">
         </div>
@@ -61,7 +105,7 @@
             <h2>Hola, Soy <span>Víctor Ramírez</span></h2>
             <h3>Desarrollador Web</h3>
             <div class="datos-personales">
-                <p><strong>Edad:</strong> 19 años.</p>
+                <p><strong>Edad:</strong> 21 años.</p>
                 <p><strong>Lugar de nacimiento:</strong> Barinas, Venezuela.</p>
                 <p><strong>Lugar de residencia:</strong> Santander, Colombia.</p>
                 <p><strong>Idiomas:</strong> Español, Inglés (A2).</p>
@@ -73,7 +117,7 @@
             <div>
                 <a href="https://www.youtube.com/@VictorRamirez0423" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
                 <a href="https://github.com/Vyktor23" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
-                <a href="https://www.instagram.com/victor_ram04?igsh=NXFzaGVicG5hcGlt" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.instagram.com/04victorius?igsh=NXFzaGVicG5hcGlt" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.linkedin.com/in/v%C3%ADctor-ram%C3%ADrez-rangel-5279251b4/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
             </div>
             <a href="./pdf/CV_VictorRamirez.pdf" download>Descargar CV en PDF</a>
@@ -81,7 +125,7 @@
     </section>
 
 <!-- SECCION ESTUDIOS -->
-<section id="estudios">
+<section id="estudios" class="reveal">
     <h3 class="titulo-seccion">Mis Estudios</h3>
     <div class="fila">
         <div class="estudio">
@@ -111,91 +155,112 @@
                 <hr>
                 <p>Servicio Nacional de Aprendizaje (SENA).</p>
                 <p>Santander - Colombia.</p>
-                <p>2023 - (Actualidad Cursando)</p>
+                <p>2023 - 2025</p>
             </div>
         </div>
     </div>
 </section>
 
-    <!-- SECCION LENGUAJES -->
-<section id="lenguajes">
-    <h3 class="titulo-seccion">Lenguajes y Tecnologías</h3>
-    <div class="fila">
-        <!-- Frontend -->
-        <div class="categoria">
-            <h4>Frontend</h4>
-            <div class="lenguaje">
-                <img src="./img/html.png" alt="HTML">
-                <div class="contenido">
-                    <h5>HTML</h5>
-                    <p>Lenguaje base para crear páginas web. Define la estructura y el contenido.</p>
-                </div>
+<!-- SECCION SERVICIOS -->
+<section id="servicios" class="reveal">
+    <div class="section-header">
+        <h3 class="titulo-seccion">Servicios</h3>
+        <p class="section-intro">Soluciones digitales que transforman ideas en productos funcionales y atractivos.</p>
+    </div>
+    <div class="servicios-grid">
+        <article class="servicio-card">
+            <div class="servicio-icon"><i class="fas fa-code"></i></div>
+            <h4>Desarrollo Frontend</h4>
+            <p>Interfaces modernas, responsivas y optimizadas con HTML, CSS, JavaScript y Vue.js.</p>
+        </article>
+        <article class="servicio-card">
+            <div class="servicio-icon"><i class="fas fa-server"></i></div>
+            <h4>Backend & APIs</h4>
+            <p>Arquitectura de servidor con Node.js, APIs REST y lógica de negocio escalable.</p>
+        </article>
+        <article class="servicio-card">
+            <div class="servicio-icon"><i class="fas fa-database"></i></div>
+            <h4>Bases de Datos</h4>
+            <p>Diseño e implementación con MySQL y MongoDB para datos estructurados y flexibles.</p>
+        </article>
+        <article class="servicio-card">
+            <div class="servicio-icon"><i class="fas fa-mobile-screen"></i></div>
+            <h4>Diseño Responsive</h4>
+            <p>Experiencias que se adaptan perfectamente a móvil, tablet y escritorio.</p>
+        </article>
+    </div>
+</section>
+
+    <!-- SECCION TECNOLOGIAS -->
+<section id="lenguajes" class="reveal">
+    <div class="section-header">
+        <h3 class="titulo-seccion">Stack Tecnológico</h3>
+        <p class="section-intro">Herramientas y lenguajes con los que construyo cada proyecto.</p>
+    </div>
+
+    <div class="tech-wrapper">
+        <div class="tech-group">
+            <div class="tech-group-header">
+                <i class="fas fa-laptop-code"></i>
+                <h4>Frontend</h4>
             </div>
-            <br>
-            <div class="lenguaje">
-                <img src="./img/css.png" alt="CSS">
-                <div class="contenido">
-                    <h5>CSS</h5>
-                    <p>Se utiliza para diseñar y dar estilo a las páginas web.</p>
-                </div>
-            </div>
-            <br>
-            <div class="lenguaje">
-                <img src="./img/javascript.png" alt="JavaScript">
-                <div class="contenido">
+            <div class="tech-grid">
+                <article class="tech-card">
+                    <div class="tech-icon"><img src="./img/html.png" alt="HTML5"></div>
+                    <h5>HTML5</h5>
+                    <span class="tech-badge tech-badge--advanced">Avanzado</span>
+                </article>
+                <article class="tech-card">
+                    <div class="tech-icon"><img src="./img/css.png" alt="CSS3"></div>
+                    <h5>CSS3</h5>
+                    <span class="tech-badge tech-badge--advanced">Avanzado</span>
+                </article>
+                <article class="tech-card">
+                    <div class="tech-icon"><img src="./img/javascript.png" alt="JavaScript"></div>
                     <h5>JavaScript</h5>
-                    <p>Lenguaje de programación que se ejecuta en el navegador del usuario y permite crear páginas web interactivas y dinámicas.</p>
-                </div>
-            </div>
-            <br>
-            <div class="lenguaje">
-                <img src="./img/vue.png" alt="Vue">
-                <div class="contenido">
-                    <h5>Vue</h5>
-                    <p>Es un framework progresivo de JavaScript utilizado para construir interfaces de usuario dinámicas y reactivas.</p>
-                </div>
+                    <span class="tech-badge tech-badge--advanced">Avanzado</span>
+                </article>
+                <article class="tech-card">
+                    <div class="tech-icon"><img src="./img/vue.png" alt="Vue.js"></div>
+                    <h5>Vue.js</h5>
+                    <span class="tech-badge tech-badge--intermediate">Intermedio</span>
+                </article>
             </div>
         </div>
-        <!-- Backend -->
-        <div class="categoria">
-            <h4>Backend</h4>
-            <div class="lenguaje">
-                <img src="./img/nodejs.png" alt="Node.js">
-                <div class="contenido">
+
+        <div class="tech-group">
+            <div class="tech-group-header">
+                <i class="fas fa-server"></i>
+                <h4>Backend</h4>
+            </div>
+            <div class="tech-grid">
+                <article class="tech-card">
+                    <div class="tech-icon"><img src="./img/nodejs.png" alt="Node.js"></div>
                     <h5>Node.js</h5>
-                    <p>Es un entorno de ejecución que permite usar JavaScript en el servidor, se maneja solicitudes de usuarios, interacción con bases de datos y realizar operaciones en el servidor.</p>
-                </div>
-            </div>
-            <br>
-            <div class="lenguaje">
-                <img src="./img/mongodb.png" alt="MongoDB">
-                <div class="contenido">
-                    <h5>MongoDB</h5>
-                    <p>Base de datos NoSQL que almacena datos en formato de documentos JSON. Es ideal para aplicaciones que requieren manejar grandes volúmenes de datos no estructurados y cambiar rápidamente.</p>
-                </div>
-            </div>
-            <br>
-            <div class="lenguaje">
-                <img src="./img/mysql.jpg" alt="MySQL">
-                <div class="contenido">
-                    <h5>MySQL</h5>
-                    <p>Es un sistema de gestión de bases de datos relacional que organiza los datos en tablas. Es muy utilizado en aplicaciones web para almacenar y gestionar información estructurada.</p>
-                </div>
-            </div>
-            <br>
-            <div class="lenguaje">
-                <img src="./img/python.jpg" alt="Python">
-                <div class="contenido">
+                    <span class="tech-badge tech-badge--intermediate">Intermedio</span>
+                </article>
+                <article class="tech-card">
+                    <div class="tech-icon"><img src="./img/python.jpg" alt="Python"></div>
                     <h5>Python</h5>
-                    <p>Lenguaje de programación muy versátil y fácil de aprender. Se utiliza en una amplia variedad de aplicaciones, desde desarrollo web hasta análisis de datos y aprendizaje automático.</p>
-                </div>
+                    <span class="tech-badge tech-badge--intermediate">Intermedio</span>
+                </article>
+                <article class="tech-card">
+                    <div class="tech-icon"><img src="./img/mongodb.png" alt="MongoDB"></div>
+                    <h5>MongoDB</h5>
+                    <span class="tech-badge tech-badge--intermediate">Intermedio</span>
+                </article>
+                <article class="tech-card">
+                    <div class="tech-icon"><img src="./img/mysql.jpg" alt="MySQL"></div>
+                    <h5>MySQL</h5>
+                    <span class="tech-badge tech-badge--intermediate">Intermedio</span>
+                </article>
             </div>
         </div>
     </div>
 </section>
 
     <!-- SECCION HABILIDADES -->
-    <div class="contenedor-skills" id="skills">
+    <div class="contenedor-skills reveal" id="skills">
         <h3>HABILIDADES</h3>
         <div class="skill">
             <div class="info">
@@ -245,64 +310,154 @@
     </div>
 
 <!-- SECCION PORTAFOLIO -->
-<section id="portfolio">
+<section id="portfolio" class="reveal">
     <h3 class="titulo-seccion">Mis Proyectos</h3>
-    <br>
-    <p>Si necesitas mayor detalles sobre mis proyectos no dudes en escribirme.</p>
-    <br>
-    <div class="fila">
-        <div class="proyecto">
-            <a href="https://pokedex-chi-six.vercel.app/#/" target="_blank" rel="noopener">
-                <img src="./img/pokedex.png" alt="">
+    <p class="portfolio-intro">Vista previa en vivo de cada proyecto. Haz clic para abrirlo en una nueva pestaña.</p>
+    <div class="fila proyectos-grid">
+
+        <article class="proyecto">
+            <a href="https://calendario-one-omega.vercel.app/" target="_blank" rel="noopener" class="preview-link">
+                <div class="preview-browser">
+                    <div class="browser-chrome">
+                        <span class="browser-dots"><span></span><span></span><span></span></span>
+                        <span class="browser-url">calendario-one-omega.vercel.app</span>
+                    </div>
+                    <div class="preview-frame">
+                        <iframe data-src="https://calendario-one-omega.vercel.app/" title="Vista previa Chronos — Calendario Cósmico" tabindex="-1" scrolling="no"></iframe>
+                    </div>
+                </div>
                 <div class="overlay">
-                    <p>Ver proyecto</p>
+                    <span class="overlay-btn">Ver proyecto <i class="fas fa-arrow-up-right-from-square"></i></span>
+                </div>
+            </a>
+            <div class="detalles">
+                <h4>Chronos — Calendario Cósmico</h4>
+                <p>Calendario interactivo con diseño inmersivo para explorar fechas, eventos y una experiencia visual única en el navegador.</p>
+                <div class="proyecto-tags">
+                    <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="proyecto">
+            <a href="https://pokedex-chi-six.vercel.app/#/" target="_blank" rel="noopener" class="preview-link">
+                <div class="preview-browser">
+                    <div class="browser-chrome">
+                        <span class="browser-dots"><span></span><span></span><span></span></span>
+                        <span class="browser-url">pokedex-chi-six.vercel.app</span>
+                    </div>
+                    <div class="preview-frame">
+                        <iframe data-src="https://pokedex-chi-six.vercel.app/#/" title="Vista previa Pokédex" tabindex="-1" scrolling="no"></iframe>
+                    </div>
+                </div>
+                <div class="overlay">
+                    <span class="overlay-btn">Ver proyecto <i class="fas fa-arrow-up-right-from-square"></i></span>
                 </div>
             </a>
             <div class="detalles">
                 <h4>Pokédex</h4>
-                <br>
-                <p>Puedes buscar información sobre algún Pokémon o realizar el intento de adivinar su nombre.</p>
-                <br>
+                <p>Busca información de cualquier Pokémon o pon a prueba tu conocimiento adivinando su nombre.</p>
+                <div class="proyecto-tags">
+                    <span>Vue</span><span>API REST</span><span>JavaScript</span>
+                </div>
             </div>
-        </div>
-        <div class="proyecto">
-            <a href="https://gymmmm.netlify.app/#/" target="_blank" rel="noopener">
-                <img src="./img/gym.png" alt="">
+        </article>
+
+        <article class="proyecto">
+            <a href="https://gymmmm.netlify.app/#/" target="_blank" rel="noopener" class="preview-link">
+                <div class="preview-browser">
+                    <div class="browser-chrome">
+                        <span class="browser-dots"><span></span><span></span><span></span></span>
+                        <span class="browser-url">gymmmm.netlify.app</span>
+                    </div>
+                    <div class="preview-frame">
+                        <iframe data-src="https://gymmmm.netlify.app/#/" title="Vista previa Software Administrativo" tabindex="-1" scrolling="no"></iframe>
+                    </div>
+                </div>
                 <div class="overlay">
-                    <p>Ver proyecto</p>
+                    <span class="overlay-btn">Ver proyecto <i class="fas fa-arrow-up-right-from-square"></i></span>
                 </div>
             </a>
             <div class="detalles">
                 <h4>Software Administrativo</h4>
-                <br>
-                <p>Una solución integral para la gestión y administración de un gimnasio, incluyendo control de clientes, reservas de planes, seguimiento de pagos, etc...</p>
-                <br>
-            </div>
-        </div>
-        <div class="proyecto">
-            <a href="#">
-                <img src="./img/proyecto3.jpg" alt="">
-                <div class="overlay">
-                    <p>Ver proyecto</p>
+                <p>Solución integral para la gestión de un gimnasio: clientes, planes, reservas y seguimiento de pagos.</p>
+                <div class="proyecto-tags">
+                    <span>Vue</span><span>Node.js</span><span>MongoDB</span>
                 </div>
-            </a>
-            <div class="detalles">
-                <h4>Proyecto</h4>
-                <p>Descripción del proyecto.</p>
             </div>
+        </article>
+
+    </div>
+</section>
+
+<!-- SECCION CTA -->
+<section id="cta" class="cta-section reveal">
+    <div class="cta-content">
+        <h3>¿Tienes un proyecto en mente?</h3>
+        <p>Estoy disponible para colaborar en ideas innovadoras, freelance o nuevas oportunidades laborales.</p>
+        <div class="cta-buttons">
+            <a href="#contacto" class="btn-cta-primary">Hablemos</a>
+            <a href="./pdf/CV_VictorRamirez.pdf" download class="btn-cta-secondary">Descargar CV</a>
         </div>
     </div>
 </section>
 
 <!-- SECCION CONTACTO -->
-<section id="contacto">
-    <h3 class="titulo-seccion">Contacto</h3>
-    <form id="formulario-contacto" class="formulario" action="https://formspree.io/f/movavyjy" method="POST">
-        <input type="text" name="nombre" placeholder="Nombre" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <textarea name="mensaje" placeholder="Mensaje" required></textarea>
-        <input type="submit" value="Enviar Mensaje">
-    </form>
+<section id="contacto" class="reveal">
+    <div class="section-header">
+        <h3 class="titulo-seccion">Contacto</h3>
+        <p class="section-intro">Cuéntame tu idea y te responderé lo antes posible.</p>
+    </div>
+    <div class="contacto-wrapper">
+        <aside class="contacto-info">
+            <div class="contacto-card">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <h4>Email</h4>
+                    <p>Escríbeme desde el formulario</p>
+                </div>
+            </div>
+            <div class="contacto-card">
+                <i class="fab fa-whatsapp"></i>
+                <div>
+                    <h4>WhatsApp</h4>
+                    <a href="https://wa.me/+573142557915?text=Hola%20Victor,%20quiero%20contactarte" target="_blank" rel="noopener">+57 314 255 7915</a>
+                </div>
+            </div>
+            <div class="contacto-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <h4>Ubicación</h4>
+                    <p>Santander, Colombia</p>
+                </div>
+            </div>
+        </aside>
+        <form id="formulario-contacto" class="formulario" action="https://formspree.io/f/movavyjy" method="POST">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="nombre"><i class="fas fa-user"></i> Nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required autocomplete="name">
+                </div>
+                <div class="form-group">
+                    <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                    <input type="email" id="email" name="email" placeholder="tu@email.com" required autocomplete="email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="asunto"><i class="fas fa-tag"></i> Asunto</label>
+                <input type="text" id="asunto" name="asunto" placeholder="¿En qué puedo ayudarte?" required>
+            </div>
+            <div class="form-group">
+                <label for="mensaje"><i class="fas fa-message"></i> Mensaje</label>
+                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntame sobre tu proyecto o consulta..." required></textarea>
+            </div>
+            <button type="submit" class="btn-enviar" id="btn-enviar">
+                <span class="btn-enviar-text">Enviar mensaje</span>
+                <i class="fas fa-paper-plane"></i>
+            </button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+    </div>
 </section>
 
 
@@ -312,22 +467,26 @@
         <div>
             <a href="https://www.youtube.com/@VictorRamirez0423" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
             <a href="https://github.com/Vyktor23" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
-            <a href="https://www.instagram.com/victor_ram04?igsh=NXFzaGVicG5hcGlt" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.instagram.com/04victorius?igsh=NXFzaGVicG5hcGlt" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
             <a href="https://www.linkedin.com/in/v%C3%ADctor-ram%C3%ADrez-rangel-5279251b4/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
         </div>
         <br>
-        <p>Víctor Ramírez &copy; 2024</p>
+        <p>Víctor Ramírez &copy; 2026</p>
         <br>
     </footer>
 
-    <script src="script.js"></script>
-
-
-    <div class="whatsapp-icon">
-        <a href="https://wa.me/+573142557915?text=Hola%20Victor,%20quiero%20contactarte" target="_blank" rel="noopener">
-            <i class="fab fa-whatsapp"></i>
+    <div class="fab-container">
+        <a href="#inicio" id="scroll-top" class="fab-btn scroll-top-btn" aria-label="Volver arriba" title="Volver arriba">
+            <i class="fas fa-arrow-up"></i>
         </a>
+        <div class="whatsapp-icon">
+            <a href="https://wa.me/+573142557915?text=Hola%20Victor,%20quiero%20contactarte" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
     </div>
+
+    <script src="script.js"></script>
 
 </body>
 
