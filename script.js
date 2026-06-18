@@ -62,17 +62,94 @@
         }
     }
 
-    function efectoHabilidades() {
-        var skills = document.getElementById('skills');
-        if (!skills) return;
-        var distancia = window.innerHeight - skills.getBoundingClientRect().top;
-        if (distancia >= 100) {
-            document.getElementById('html').classList.add('barra-progreso1');
-            document.getElementById('js').classList.add('barra-progreso2');
-            document.getElementById('bd').classList.add('barra-progreso3');
-            document.getElementById('ps').classList.add('barra-progreso4');
-            document.getElementById('te').classList.add('barra-progreso5');
+    function initProjectModal() {
+        var modal = document.getElementById('proyecto-modal');
+        var backdrop = document.getElementById('proyecto-modal-backdrop');
+        var closeBtn = document.getElementById('proyecto-modal-close');
+        var modalTitle = document.getElementById('proyecto-modal-title');
+        var modalResumen = document.getElementById('proyecto-modal-resumen');
+        var modalTags = document.getElementById('proyecto-modal-tags');
+        var modalBody = document.getElementById('proyecto-modal-body');
+        var modalLink = document.getElementById('proyecto-modal-link');
+        if (!modal) return;
+
+        function openModal(proyecto) {
+            var detalles = proyecto.querySelector('.detalles');
+            var detalleData = proyecto.querySelector('.proyecto-detalle-data');
+            var previewLink = proyecto.querySelector('.preview-link');
+            if (!detalles || !detalleData) return;
+
+            var title = detalles.querySelector('h4');
+            var resumen = detalles.querySelector('.proyecto-resumen');
+            var tags = detalles.querySelector('.proyecto-tags');
+
+            modalTitle.textContent = title ? title.textContent : '';
+            modalResumen.textContent = resumen ? resumen.textContent : '';
+            modalTags.innerHTML = tags ? tags.innerHTML : '';
+            modalBody.innerHTML = detalleData.innerHTML;
+
+            if (previewLink) {
+                modalLink.href = previewLink.href;
+            }
+
+            modal.classList.add('is-open');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('modal-open');
         }
+
+        function closeModal() {
+            modal.classList.remove('is-open');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('modal-open');
+        }
+
+        document.querySelectorAll('.btn-leer-mas').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var proyecto = btn.closest('.proyecto');
+                if (proyecto) openModal(proyecto);
+            });
+        });
+
+        document.querySelectorAll('.preview-link').forEach(function (link) {
+            link.addEventListener('click', function () {
+                link.blur();
+            });
+        });
+
+        if (backdrop) backdrop.addEventListener('click', closeModal);
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+        window.closeProyectoModal = closeModal;
+    }
+
+    function initCvModal() {
+        var modal = document.getElementById('cv-modal');
+        var backdrop = document.getElementById('cv-modal-backdrop');
+        var closeBtn = document.getElementById('cv-modal-close');
+        var triggers = document.querySelectorAll('#btn-ver-cv, .btn-ver-cv');
+        if (!modal) return;
+
+        function openModal() {
+            modal.classList.add('is-open');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('modal-open');
+        }
+
+        function closeModal() {
+            modal.classList.remove('is-open');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('modal-open');
+        }
+
+        triggers.forEach(function (trigger) {
+            trigger.addEventListener('click', function (e) {
+                e.preventDefault();
+                openModal();
+            });
+        });
+
+        if (backdrop) backdrop.addEventListener('click', closeModal);
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
     }
 
     function lazyLoadPreviews() {
@@ -165,7 +242,7 @@
                     observer.unobserve(entry.target);
                 }
             });
-        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.1 });
+        }, { rootMargin: '0px 0px -5% 0px', threshold: 0.08 });
 
         revealElements.forEach(function (el) {
             observer.observe(el);
@@ -198,12 +275,25 @@
         initContactForm();
 
         document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') closeMenu();
+            if (e.key === 'Escape') {
+                closeMenu();
+                var cvModal = document.getElementById('cv-modal');
+                if (cvModal && cvModal.classList.contains('is-open')) {
+                    cvModal.classList.remove('is-open');
+                    cvModal.setAttribute('aria-hidden', 'true');
+                    document.body.classList.remove('modal-open');
+                }
+                if (typeof window.closeProyectoModal === 'function') {
+                    var proyectoModal = document.getElementById('proyecto-modal');
+                    if (proyectoModal && proyectoModal.classList.contains('is-open')) {
+                        window.closeProyectoModal();
+                    }
+                }
+            }
         });
 
         window.addEventListener('scroll', function () {
             updateScrollUI();
-            efectoHabilidades();
         }, { passive: true });
 
         window.addEventListener('resize', onResize, { passive: true });
@@ -299,6 +389,8 @@
         lazyLoadPreviews();
         initNavObserver();
         initRevealObserver();
+        initProjectModal();
+        initCvModal();
         updateScrollUI();
         fitPreviewFrames();
         initPreviewResizeObserver();

@@ -76,7 +76,7 @@
 <section id="stats" class="stats-bar reveal">
     <div class="stats-grid">
         <div class="stat-item">
-            <span class="stat-num">3+</span>
+            <span class="stat-num">4+</span>
             <span class="stat-label">Proyectos publicados</span>
         </div>
         <div class="stat-item">
@@ -97,30 +97,34 @@
 
     <!-- SECCION SOBRE MI -->
     <section id="sobremi" class="reveal">
-        <div class="contenedor-foto">
-            <img src="./img/fotop.jpeg" alt="">
-        </div>
-        <div class="sobremi">
-            <p class="titulo-seccion">Sobre Mi</p>
-            <h2>Hola, Soy <span>Víctor Ramírez</span></h2>
-            <h3>Desarrollador Web</h3>
-            <div class="datos-personales">
-                <p><strong>Edad:</strong> 21 años.</p>
-                <p><strong>Lugar de nacimiento:</strong> Barinas, Venezuela.</p>
-                <p><strong>Lugar de residencia:</strong> Santander, Colombia.</p>
-                <p><strong>Idiomas:</strong> Español, Inglés (A2).</p>
+        <div class="sobremi-inner">
+            <div class="contenedor-foto">
+                <img src="./img/fotop.jpeg" alt="Foto de Víctor Ramírez">
             </div>
-            <p>Apasionado por el desarrollo web y comprometido con aprender y dominar las diferentes tecnologías del FrontEnd y del BackEnd.</p>
-            <p>Mi enfoque no solo se limita a escribir código, sino también a entender las necesidades del usuario y transformarlas en soluciones efectivas y atractivas.</p>
-            <p>Estoy emocionado por contribuir en proyectos innovadores que no solo resuelvan problemas, sino que también inspiren y transformen la forma en que interactuamos digitalmente.</p>
-            <!-- Redes sociales -->
-            <div>
-                <a href="https://www.youtube.com/@VictorRamirez0423" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
-                <a href="https://github.com/Vyktor23" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
-                <a href="https://www.instagram.com/04victorius?igsh=NXFzaGVicG5hcGlt" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/v%C3%ADctor-ram%C3%ADrez-rangel-5279251b4/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+            <div class="sobremi">
+                <p class="titulo-seccion">Sobre mí</p>
+                <h2>Hola, soy <span>Víctor Ramírez</span></h2>
+                <h3>Desarrollador web</h3>
+
+                <div class="datos-personales">
+                    <span class="dato-item"><i class="fas fa-cake-candles"></i> 21 años</span>
+                    <span class="dato-item"><i class="fas fa-house"></i> Residencia · Santander, Colombia</span>
+                    <span class="dato-item"><i class="fas fa-map-pin"></i> Nacimiento · Barinas, Venezuela</span>
+                    <span class="dato-item"><i class="fas fa-language"></i> Español · Inglés (A2)</span>
+                </div>
+
+                <p class="sobremi-lead">Desarrollo aplicaciones web completas, desde interfaces claras hasta la lógica del servidor, con atención al detalle y enfoque en la experiencia del usuario.</p>
+                <p>Me interesa construir productos que resuelvan problemas reales: entender qué necesita quien usa la app y traducirlo en código mantenible, accesible y bien presentado.</p>
+                <p>Dispongo de una tecnología en Análisis y Desarrollo de Software donde sigo fortaleciendo mi perfil con formación constante. Actualmente trabajo y lidero proyectos propios en producción, estoy siempre disponible para nuevas oportunidades que me permitan la oportunidad de aportar, colaborar y seguir creciendo de la mano con el cumplimiento de hacer realidad cualquier clase de idea propuesta.</p>
+
+                <div class="redes-sobremi">
+                    <a href="https://www.youtube.com/@VictorRamirez0423" target="_blank" rel="noopener" class="red-social red-social--youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://github.com/Vyktor23" target="_blank" rel="noopener" class="red-social red-social--github" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/04victorius?igsh=NXFzaGVicG5hcGlt" target="_blank" rel="noopener" class="red-social red-social--instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/v%C3%ADctor-ram%C3%ADrez-rangel-5279251b4/" target="_blank" rel="noopener" class="red-social red-social--linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <button type="button" class="btn-cv" id="btn-ver-cv">Ver hoja de vida</button>
             </div>
-            <a href="./pdf/CV_VictorRamirez.pdf" download>Descargar CV en PDF</a>
         </div>
     </section>
 
@@ -208,22 +212,18 @@
                 <article class="tech-card">
                     <div class="tech-icon"><img src="./img/html.png" alt="HTML5"></div>
                     <h5>HTML5</h5>
-                    <span class="tech-badge tech-badge--advanced">Avanzado</span>
                 </article>
                 <article class="tech-card">
                     <div class="tech-icon"><img src="./img/css.png" alt="CSS3"></div>
                     <h5>CSS3</h5>
-                    <span class="tech-badge tech-badge--advanced">Avanzado</span>
                 </article>
                 <article class="tech-card">
                     <div class="tech-icon"><img src="./img/javascript.png" alt="JavaScript"></div>
                     <h5>JavaScript</h5>
-                    <span class="tech-badge tech-badge--advanced">Avanzado</span>
                 </article>
                 <article class="tech-card">
                     <div class="tech-icon"><img src="./img/vue.png" alt="Vue.js"></div>
                     <h5>Vue.js</h5>
-                    <span class="tech-badge tech-badge--intermediate">Intermedio</span>
                 </article>
             </div>
         </div>
@@ -237,22 +237,18 @@
                 <article class="tech-card">
                     <div class="tech-icon"><img src="./img/nodejs.png" alt="Node.js"></div>
                     <h5>Node.js</h5>
-                    <span class="tech-badge tech-badge--intermediate">Intermedio</span>
                 </article>
                 <article class="tech-card">
                     <div class="tech-icon"><img src="./img/python.jpg" alt="Python"></div>
                     <h5>Python</h5>
-                    <span class="tech-badge tech-badge--intermediate">Intermedio</span>
                 </article>
                 <article class="tech-card">
                     <div class="tech-icon"><img src="./img/mongodb.png" alt="MongoDB"></div>
                     <h5>MongoDB</h5>
-                    <span class="tech-badge tech-badge--intermediate">Intermedio</span>
                 </article>
                 <article class="tech-card">
                     <div class="tech-icon"><img src="./img/mysql.jpg" alt="MySQL"></div>
                     <h5>MySQL</h5>
-                    <span class="tech-badge tech-badge--intermediate">Intermedio</span>
                 </article>
             </div>
         </div>
@@ -260,60 +256,88 @@
 </section>
 
     <!-- SECCION HABILIDADES -->
-    <div class="contenedor-skills reveal" id="skills">
-        <h3>HABILIDADES</h3>
-        <div class="skill">
-            <div class="info">
-                <p>HTML & CSS</p>
-                <span class="porcentaje">91%</span>
+    <section id="skills" class="skills-section reveal">
+        <div class="section-header">
+            <h3 class="titulo-seccion">Habilidades</h3>
+            <p class="section-intro">Competencias técnicas y blandas que aplico en cada proyecto.</p>
+        </div>
+        <div class="skills-wrapper">
+            <div class="skills-group">
+                <div class="skills-group-title">
+                    <i class="fas fa-laptop-code"></i>
+                    <h4>Técnicas</h4>
+                </div>
+                <div class="skills-pills">
+                    <span class="skill-pill"><i class="fab fa-html5"></i> HTML & CSS</span>
+                    <span class="skill-pill"><i class="fab fa-js"></i> JavaScript</span>
+                    <span class="skill-pill"><i class="fab fa-vuejs"></i> Vue.js</span>
+                    <span class="skill-pill"><i class="fas fa-database"></i> Bases de Datos</span>
+                    <span class="skill-pill"><i class="fab fa-node-js"></i> Node.js</span>
+                    <span class="skill-pill"><i class="fas fa-mobile-screen"></i> Diseño Responsive</span>
+                </div>
             </div>
-            <div class="barra">
-                <div class="" id="html"></div>
+            <div class="skills-group">
+                <div class="skills-group-title">
+                    <i class="fas fa-lightbulb"></i>
+                    <h4>Blandas</h4>
+                </div>
+                <div class="skills-pills">
+                    <span class="skill-pill"><i class="fas fa-people-group"></i> Trabajo en equipo</span>
+                    <span class="skill-pill"><i class="fas fa-comments"></i> Comunicación</span>
+                    <span class="skill-pill"><i class="fas fa-puzzle-piece"></i> Resolución de problemas</span>
+                    <span class="skill-pill"><i class="fas fa-clock"></i> Gestión del tiempo</span>
+                    <span class="skill-pill"><i class="fas fa-book-open"></i> Aprendizaje continuo</span>
+                </div>
             </div>
         </div>
-        <div class="skill">
-            <div class="info">
-                <p>JavaScript</p>
-                <span class="porcentaje">83%</span>
-            </div>
-            <div class="barra">
-                <div class="" id="js"></div>
-            </div>
-        </div>
-        <div class="skill">
-            <div class="info">
-                <p>Bases de Datos</p>
-                <span class="porcentaje">87%</span>
-            </div>
-            <div class="barra">
-                <div class="" id="bd"></div>
-            </div>
-        </div>
-        <div class="skill">
-            <div class="info">
-                <p>Diseño</p>
-                <span class="porcentaje">76%</span>
-            </div>
-            <div class="barra">
-                <div class="" id="ps"></div>
-            </div>
-        </div>
-        <div class="skill">
-            <div class="info">
-                <p>Trabajo en Equipo</p>
-                <span class="porcentaje">97%</span>
-            </div>
-            <div class="barra">
-                <div class="" id="te"></div>
-            </div>
-        </div>
-    </div>
+    </section>
 
 <!-- SECCION PORTAFOLIO -->
 <section id="portfolio" class="reveal">
     <h3 class="titulo-seccion">Mis Proyectos</h3>
-    <p class="portfolio-intro">Vista previa en vivo de cada proyecto. Haz clic para abrirlo en una nueva pestaña.</p>
+    <p class="portfolio-intro">Vista previa en vivo de cada proyecto. Haz clic en la tarjeta para abrirlo o en «Leer más» para ver los detalles.</p>
     <div class="fila proyectos-grid">
+
+        <article class="proyecto">
+            <a href="https://monedux-tracker.vercel.app/" target="_blank" rel="noopener" class="preview-link">
+                <div class="preview-browser">
+                    <div class="browser-chrome">
+                        <span class="browser-dots"><span></span><span></span><span></span></span>
+                        <span class="browser-url">monedux-tracker.vercel.app</span>
+                    </div>
+                    <div class="preview-frame">
+                        <iframe data-src="https://monedux-tracker.vercel.app/" title="Vista previa Monedux Tracker" tabindex="-1" scrolling="no"></iframe>
+                    </div>
+                </div>
+                <div class="overlay">
+                    <span class="overlay-btn">Ver proyecto <i class="fas fa-arrow-up-right-from-square"></i></span>
+                </div>
+            </a>
+            <div class="detalles">
+                <h4>Monedux Tracker</h4>
+                <p class="proyecto-resumen">App de finanzas personales con dashboard, transacciones, presupuestos, metas de ahorro, préstamos y reportes en PDF.</p>
+                <div class="proyecto-tags">
+                    <span>React</span><span>NestJS</span><span>PostgreSQL</span>
+                </div>
+                <button type="button" class="btn-leer-mas">
+                    Leer más <i class="fas fa-circle-info"></i>
+                </button>
+                <div class="proyecto-detalle-data" hidden>
+                    <div class="proyecto-detalle-block">
+                        <h5><i class="fas fa-bullseye"></i> Objetivo</h5>
+                        <p>Centralizar la gestión financiera personal en un panel claro y seguro: registrar movimientos, controlar presupuestos, planificar ahorros y consultar el estado del dinero sin depender de hojas de cálculo.</p>
+                    </div>
+                    <div class="proyecto-detalle-block">
+                        <h5><i class="fas fa-gears"></i> Cómo funciona</h5>
+                        <p>El usuario se registra, configura categorías y define presupuestos por periodo. Desde el dashboard visualiza balance, ingresos, gastos y gráficos; registra transacciones, metas de ahorro y préstamos. Recibe alertas por correo (presupuesto excedido, metas alcanzadas) y puede exportar reportes en PDF.</p>
+                    </div>
+                    <div class="proyecto-detalle-block">
+                        <h5><i class="fas fa-layer-group"></i> Stack y arquitectura</h5>
+                        <p><strong>Frontend:</strong> React 19, TypeScript, Vite, Tailwind CSS v4, React Router, TanStack Query, Recharts y jsPDF.<br><strong>Backend:</strong> NestJS con API REST, Prisma ORM y PostgreSQL; autenticación JWT, validación con class-validator y envío de correos con Nodemailer.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
 
         <article class="proyecto">
             <a href="https://calendario-one-omega.vercel.app/" target="_blank" rel="noopener" class="preview-link">
@@ -331,10 +355,27 @@
                 </div>
             </a>
             <div class="detalles">
-                <h4>Chronos — Calendario Cósmico</h4>
-                <p>Calendario interactivo con diseño inmersivo para explorar fechas, eventos y una experiencia visual única en el navegador.</p>
+                <h4>Chronos — Calendario Inteligente</h4>
+                <p class="proyecto-resumen">Calendario web con clima, festivos de Colombia, fases lunares, imagen del cosmos y eventos personales en múltiples vistas.</p>
                 <div class="proyecto-tags">
-                    <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                    <span>React</span><span>FastAPI</span><span>Tailwind</span>
+                </div>
+                <button type="button" class="btn-leer-mas">
+                    Leer más <i class="fas fa-circle-info"></i>
+                </button>
+                <div class="proyecto-detalle-data" hidden>
+                    <div class="proyecto-detalle-block">
+                        <h5><i class="fas fa-bullseye"></i> Objetivo</h5>
+                        <p>Crear un calendario informativo y visualmente distinto al convencional: combinar fechas, contexto astronómico, clima y cultura local en una sola experiencia web inmersiva.</p>
+                    </div>
+                    <div class="proyecto-detalle-block">
+                        <h5><i class="fas fa-gears"></i> Cómo funciona</h5>
+                        <p>Ofrece vista de mes, año y agenda con festivos colombianos, fase lunar y clima según ubicación. Muestra la imagen del cosmos del día (NASA), permite crear eventos propios guardados en el navegador y cambiar entre 7 temas visuales (Cosmos, Aurora, Sakura, etc.).</p>
+                    </div>
+                    <div class="proyecto-detalle-block">
+                        <h5><i class="fas fa-layer-group"></i> Stack y arquitectura</h5>
+                        <p><strong>Frontend:</strong> React 19, TypeScript, Vite y Tailwind CSS v4; componentes modulares para calendario, panel lateral y modales; eventos en localStorage.<br><strong>Backend:</strong> Python con FastAPI y Uvicorn; servicios para clima (Open-Meteo), festivos (Nager.Date), fases lunares, NASA Image Library y geocodificación.</p>
+                    </div>
                 </div>
             </div>
         </article>
@@ -356,9 +397,26 @@
             </a>
             <div class="detalles">
                 <h4>Pokédex</h4>
-                <p>Busca información de cualquier Pokémon o pon a prueba tu conocimiento adivinando su nombre.</p>
+                <p class="proyecto-resumen">Pokédex interactiva con álbum, búsqueda de Pokémon y minijuegos para explorar la PokeAPI de forma lúdica.</p>
                 <div class="proyecto-tags">
-                    <span>Vue</span><span>API REST</span><span>JavaScript</span>
+                    <span>Vue 3</span><span>Quasar</span><span>PokeAPI</span>
+                </div>
+                <button type="button" class="btn-leer-mas">
+                    Leer más <i class="fas fa-circle-info"></i>
+                </button>
+                <div class="proyecto-detalle-data" hidden>
+                    <div class="proyecto-detalle-block">
+                        <h5><i class="fas fa-bullseye"></i> Objetivo</h5>
+                        <p>Consumir la PokeAPI en una SPA moderna que permita consultar fichas de Pokémon, llevar un álbum de descubiertos y practicar conocimiento con juegos integrados.</p>
+                    </div>
+                    <div class="proyecto-detalle-block">
+                        <h5><i class="fas fa-gears"></i> Cómo funciona</h5>
+                        <p>Explora el listado con búsqueda y perfil detallado de cada Pokémon (tipos, stats, sprites). El álbum registra tu progreso. En el hub de juegos puedes adivinar el Pokémon, entrenar memoria, identificar tipos y repasar estadísticas.</p>
+                    </div>
+                    <div class="proyecto-detalle-block">
+                        <h5><i class="fas fa-layer-group"></i> Stack y arquitectura</h5>
+                        <p><strong>Frontend:</strong> Vue 3 con Composition API, Quasar UI, Vue Router, Axios y Vite; composables reutilizables para la API y el álbum; diseño responsive con navegación inferior.<br><strong>Datos:</strong> consumo de la PokeAPI REST pública.</p>
+                    </div>
                 </div>
             </div>
         </article>
@@ -379,10 +437,32 @@
                 </div>
             </a>
             <div class="detalles">
-                <h4>Software Administrativo</h4>
-                <p>Solución integral para la gestión de un gimnasio: clientes, planes, reservas y seguimiento de pagos.</p>
+                <h4>Software Administrativo — Forza Gym</h4>
+                <p class="proyecto-resumen">Sistema de gestión para gimnasio con módulos de clientes, planes, reservas, pagos, inventario y más. <em>Proyecto en desarrollo activo.</em></p>
                 <div class="proyecto-tags">
-                    <span>Vue</span><span>Node.js</span><span>MongoDB</span>
+                    <span>Vue 3</span><span>Express</span><span>MongoDB</span>
+                    <span class="tag-estado">En desarrollo</span>
+                </div>
+                <button type="button" class="btn-leer-mas">
+                    Leer más <i class="fas fa-circle-info"></i>
+                </button>
+                <div class="proyecto-detalle-data" hidden>
+                    <div class="proyecto-detalle-block">
+                        <h5><i class="fas fa-bullseye"></i> Objetivo</h5>
+                        <p>Digitalizar la operación de un gimnasio en una plataforma web: centralizar clientes, membresías, reservas, pagos, inventario, ventas y mantenimiento de equipos en un solo sistema administrativo.</p>
+                    </div>
+                    <div class="proyecto-detalle-block">
+                        <h5><i class="fas fa-gears"></i> Cómo funciona</h5>
+                        <p>Arquitectura separada en frontend y backend. El panel permite gestionar sedes, usuarios con roles, clientes (con foto y seguimiento), planes, clases, reservas, pagos, caja, ingresos, inventario, proveedores, ventas y mantenimiento de máquinas. Incluye autenticación JWT, tareas programadas y notificaciones por correo.</p>
+                    </div>
+                    <div class="proyecto-detalle-block">
+                        <h5><i class="fas fa-layer-group"></i> Stack y arquitectura</h5>
+                        <p><strong>Frontend:</strong> Vue 3, Quasar, Pinia, Vue Router, Axios, Vite, ApexCharts y CropperJS.</p>
+                    </div>
+                    <div class="proyecto-detalle-block">
+                        <h5><i class="fas fa-hourglass-half"></i> Estado del proyecto</h5>
+                        <p>En desarrollo activo: varios módulos ya funcionan, pero el sistema <strong>no está terminado al 100%</strong>. Se siguen integrando funcionalidades, puliendo flujos y completando la estabilidad general antes de considerarlo producto final.</p>
+                    </div>
                 </div>
             </div>
         </article>
@@ -397,7 +477,7 @@
         <p>Estoy disponible para colaborar en ideas innovadoras, freelance o nuevas oportunidades laborales.</p>
         <div class="cta-buttons">
             <a href="#contacto" class="btn-cta-primary">Hablemos</a>
-            <a href="./pdf/CV_VictorRamirez.pdf" download class="btn-cta-secondary">Descargar CV</a>
+            <button type="button" class="btn-cta-secondary btn-ver-cv">Ver hoja de vida</button>
         </div>
     </div>
 </section>
@@ -408,30 +488,7 @@
         <h3 class="titulo-seccion">Contacto</h3>
         <p class="section-intro">Cuéntame tu idea y te responderé lo antes posible.</p>
     </div>
-    <div class="contacto-wrapper">
-        <aside class="contacto-info">
-            <div class="contacto-card">
-                <i class="fas fa-envelope"></i>
-                <div>
-                    <h4>Email</h4>
-                    <p>Escríbeme desde el formulario</p>
-                </div>
-            </div>
-            <div class="contacto-card">
-                <i class="fab fa-whatsapp"></i>
-                <div>
-                    <h4>WhatsApp</h4>
-                    <a href="https://wa.me/+573142557915?text=Hola%20Victor,%20quiero%20contactarte" target="_blank" rel="noopener">+57 314 255 7915</a>
-                </div>
-            </div>
-            <div class="contacto-card">
-                <i class="fas fa-map-marker-alt"></i>
-                <div>
-                    <h4>Ubicación</h4>
-                    <p>Santander, Colombia</p>
-                </div>
-            </div>
-        </aside>
+    <div class="contacto-wrapper contacto-wrapper--centered">
         <form id="formulario-contacto" class="formulario" action="https://formspree.io/f/movavyjy" method="POST">
             <div class="form-row">
                 <div class="form-group">
@@ -483,6 +540,50 @@
             <a href="https://wa.me/+573142557915?text=Hola%20Victor,%20quiero%20contactarte" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
                 <i class="fab fa-whatsapp"></i>
             </a>
+        </div>
+    </div>
+
+    <!-- Modal detalle de proyecto -->
+    <div class="proyecto-modal" id="proyecto-modal" aria-hidden="true" role="dialog" aria-labelledby="proyecto-modal-title">
+        <div class="proyecto-modal-backdrop" id="proyecto-modal-backdrop"></div>
+        <div class="proyecto-modal-content">
+            <div class="proyecto-modal-header">
+                <div class="proyecto-modal-header-text">
+                    <h3 id="proyecto-modal-title"></h3>
+                    <p class="proyecto-modal-resumen" id="proyecto-modal-resumen"></p>
+                    <div class="proyecto-modal-tags" id="proyecto-modal-tags"></div>
+                </div>
+                <button type="button" class="proyecto-modal-close" id="proyecto-modal-close" aria-label="Cerrar">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="proyecto-modal-body" id="proyecto-modal-body"></div>
+            <div class="proyecto-modal-footer">
+                <a href="#" id="proyecto-modal-link" target="_blank" rel="noopener" class="btn-proyecto-live">
+                    Ver proyecto en vivo <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal hoja de vida -->
+    <div class="cv-modal" id="cv-modal" aria-hidden="true" role="dialog" aria-labelledby="cv-modal-title">
+        <div class="cv-modal-backdrop" id="cv-modal-backdrop"></div>
+        <div class="cv-modal-content">
+            <div class="cv-modal-header">
+                <h3 id="cv-modal-title">Hoja de vida — Víctor Ramírez</h3>
+                <button type="button" class="cv-modal-close" id="cv-modal-close" aria-label="Cerrar">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="cv-modal-body">
+                <iframe src="./pdf/CV_VictorRamirez.pdf" title="Vista previa de la hoja de vida" class="cv-iframe"></iframe>
+            </div>
+            <div class="cv-modal-footer">
+                <a href="./pdf/CV_VictorRamirez.pdf" download class="btn-cv-download">
+                    <i class="fas fa-download"></i> Descargar PDF
+                </a>
+            </div>
         </div>
     </div>
 
